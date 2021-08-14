@@ -14,7 +14,7 @@ def formInput(request):
             course = form.cleaned_data.get('course')
             rank = form.cleaned_data.get('rank')
 
-            df = pd.read_csv('django-backend/keamwebapp/college_predictor/data/final_data.csv')
+            df = pd.read_csv('data/final_data.csv')
 
             df = df.loc[df['Course'] == course]
             df = df.loc[df[category] >= rank]
@@ -28,9 +28,9 @@ def formInput(request):
             cols_to_drop.append("College Code")
             df = df.drop(labels=cols_to_drop, axis=1)
 
+            df_dict = df.to_dict()
 
-
-            return render('college_predictor/prediction.html')
+            return render(request, 'college_predictor/prediction.html', {'df_dict':df_dict})
         else:
             messages.warning(request, 'Please fill the form correctly')
         
