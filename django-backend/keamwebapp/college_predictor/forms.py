@@ -25,3 +25,4 @@ class CandidateDataForm(forms.Form):
 
     category = forms.ChoiceField(choices=sorted(category_choices_list), required=True)
     course = forms.ChoiceField(choices=sorted(course_choice_list), required=True)
+    rank = forms.IntegerField(required=True)
