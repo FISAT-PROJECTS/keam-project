@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import CandidateDataForm
 
 import pandas as pd
+import json
 
 def formInput(request):
     if request.method == 'POST':
@@ -14,7 +15,9 @@ def formInput(request):
             course = form.cleaned_data.get('course')
             rank = form.cleaned_data.get('rank')
 
-            df = pd.read_csv('data/final_data.csv')
+            df = pd.read_csv("final_data.csv")
+
+            categories = list(df.columns)[4:]
 
             df = df.loc[df['Course'] == course]
             df = df.loc[df[category] >= rank]
@@ -24,13 +27,22 @@ def formInput(request):
             df = df.reset_index(drop=True)
 
             # dropping a few columns 
-            cols_to_drop = [i for i in category if i!=category]
+            cols_to_drop = [i for i in categories if i!=category]
             cols_to_drop.append("College Code")
+            cols_to_drop.append("Course")
+            cols_to_drop.append("Unnamed: 0")
             df = df.drop(labels=cols_to_drop, axis=1)
 
-            df_dict = df.to_dict()
+            # df_json = df.to_json(orient='records')
 
-            return render(request, 'college_predictor/prediction.html', {'df_dict':df_dict})
+            # data = []
+
+            # data = json.loads(df_json)
+
+            # context = {'d':data}
+            df_html = df.to_html()
+
+            return render(request, 'college_predictor/prediction.html', context={'df_html':df_html})
         else:
             messages.warning(request, 'Please fill the form correctly')
         
