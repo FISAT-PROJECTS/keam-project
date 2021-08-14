@@ -1,6 +1,8 @@
-{% extends "./base.html" %}
+{% extends base.html %}
 {% block content %}
-    <div>
-        {{ df_html|safe }}
-    </div>
+    <ul>
+        {% for index in df_dict %}
+            <li>{{ index }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
