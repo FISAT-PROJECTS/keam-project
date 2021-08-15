@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from pprint import pprint as pp
 import time as t
 
+# number as per the dropdown in the site
 district = {
 	'All' 					: 0 ,
 	'THIRUVANANTHAPURAM'	: 1 ,
@@ -57,12 +58,14 @@ def select_combobox_x(driver,dropdown_val):
 	driver[0].send_keys(Keys.RETURN)
 	# t.sleep(5)
 
+
 def checklist(driver):
 	if type(driver) == list:
 		print("{")
 		for i,j in enumerate(driver[0].text.split()):
 			print("\t\'",j,'\':',i,",")
 		print("}")
+
 
 def automated_choose(driver):	
 	#1
@@ -96,6 +99,7 @@ def checklist_x(driver):
 			if type(i) != list:
 				print(i.text.split('\n'))
 			print()
+			
 
 def get_affiliated_links(driver):
 
@@ -116,6 +120,7 @@ def get_affiliated_links(driver):
 		f.write("affiliated_links=['")
 		f.write("',\n'".join(affiliated_links))
 		f.write("']")
+
 
 def ktu_site():
 	driver =  webdriver.Edge("msedgedriver.exe")
