@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from pprint import pprint as pp
 import time as t
 
 # number as per the dropdown in the site
@@ -52,6 +51,7 @@ program = {
 }
 
 
+# to select the item in the dropdown (in site)
 def select_combobox_x(driver,dropdown_val):
 	driver[0].click()
 	driver[0].send_keys(Keys.ARROW_DOWN*dropdown_val)
@@ -59,6 +59,7 @@ def select_combobox_x(driver,dropdown_val):
 	# t.sleep(5)
 
 
+# to print year, district, degree and program in dict format
 def checklist(driver):
 	if type(driver) == list:
 		print("{")
@@ -93,6 +94,7 @@ def automated_choose(driver):
 	select_combobox_x(select_prog, program['B.Tech'])
 
 
+# to iterate the selenium_scraped_element 
 def checklist_x(driver):
 	if type(driver) == list:
 		for i in driver:
@@ -100,9 +102,8 @@ def checklist_x(driver):
 				print(i.text.split('\n'))
 			print()
 			
-
+# to get affiliated links for further scrapping
 def get_affiliated_links(driver):
-
 	# 1
 	select_yr = driver.find_elements(By.XPATH,"/html/body/div[3]/div[1]/div[2]/div/form/div/div[1]/span[1]/select")
 	print(' - select complete')
@@ -122,7 +123,8 @@ def get_affiliated_links(driver):
 		f.write("']")
 
 
-def ktu_site():
+# main
+def ktu_scrapper():
 	driver =  webdriver.Edge("msedgedriver.exe")
 	driver.get('https://ktu.edu.in/eu/afn/affiliationInstitutes.htm')
 	
@@ -137,13 +139,4 @@ def ktu_site():
 
 	driver.close()
 
-ktu_site()
-
-
-	# for i in institution_name:
-	# 	print(i,type(i))
-	# 	if type(i)==list:
-	# 		for j in i:
-	# 			print(j,type(j))
-	# 	else:
-	# 		print(i.text)
+ktu_scrapper()
