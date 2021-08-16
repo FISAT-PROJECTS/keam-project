@@ -20,7 +20,7 @@ def formInput(request):
             categories = list(df.columns)[4:]
 
             df = df.loc[df['Course'] == course]
-            df = df.loc[df[category] >= rank]
+            df = df.loc[df[category] >= rank-(rank*0.2)]
 
             # sorting based on closing rank
             df = df.sort_values(by = 'SM')
@@ -28,7 +28,7 @@ def formInput(request):
 
             # dropping a few columns 
             cols_to_drop = [i for i in categories if i!=category]
-            cols_to_drop.append("College Code")
+            # cols_to_drop.append("College Code")
             cols_to_drop.append("Course")
             cols_to_drop.append("Unnamed: 0")
             df = df.drop(labels=cols_to_drop, axis=1)
@@ -40,7 +40,7 @@ def formInput(request):
             # data = json.loads(df_json)
 
             # context = {'d':data}
-            df_html = df.to_html()
+            df_html = df.to_html(classes=["table", "table-striped", "table-bordered"])
 
             return render(request, 'college_predictor/base.html', context={'df_html':df_html, 'form':form})
         else:
