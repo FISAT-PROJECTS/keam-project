@@ -32,14 +32,7 @@ def formInput(request):
             cols_to_drop.append("Course")
             cols_to_drop.append("Unnamed: 0")
             df = df.drop(labels=cols_to_drop, axis=1)
-
-            # df_json = df.to_json(orient='records')
-
-            # data = []
-
-            # data = json.loads(df_json)
-
-            # context = {'d':data}
+            
             df_html = df.to_html(classes=["table", "table-striped", "table-bordered"])
 
             return render(request, 'college_predictor/base.html', context={'df_html':df_html, 'form':form})

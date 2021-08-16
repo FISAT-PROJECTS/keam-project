@@ -35,6 +35,7 @@ h2 {
   height: 20px;
   width: fit-content;
   margin: 1.5em auto;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h6 {
@@ -68,7 +69,7 @@ th:nth-child(3) {
 }
 
 .font-nav {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 2em;
 }
 
