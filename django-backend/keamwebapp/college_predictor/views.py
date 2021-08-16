@@ -20,18 +20,21 @@ def formInput(request):
             categories = list(df.columns)[4:]
 
             df = df.loc[df['Course'] == course]
-            df = df.loc[df[category] >= rank-(rank*0.2)]
+            df = df.loc[df[category] >= rank-(rank*0.15)]
 
             # sorting based on closing rank
-            df = df.sort_values(by = 'SM')
+            df = df.sort_values(by = category)
             df = df.reset_index(drop=True)
 
             # dropping a few columns 
             cols_to_drop = [i for i in categories if i!=category]
-            # cols_to_drop.append("College Code")
             cols_to_drop.append("Course")
             cols_to_drop.append("Unnamed: 0")
             df = df.drop(labels=cols_to_drop, axis=1)
+            
+            # converting all category names to "Closing Rank" in the output dataframe
+            for a in categories:
+                df.rename(columns={a : "Closing Rank"}, inplace=True)
             
             df_html = df.to_html(classes=["table", "table-striped", "table-bordered"])
 
