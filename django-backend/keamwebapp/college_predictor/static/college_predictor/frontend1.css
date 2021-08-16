@@ -1,0 +1,22 @@
+.nav{
+  background:;
+}
+.r1{
+  font-weight: bold;
+  background: white;
+  width:75vw;
+  margin: 2em auto; 
+}
+.r2{
+  font-weight: bold;
+  background:white;
+  width:75vw;
+  margin: 2em auto;
+}
+button{
+  width: 100px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+}
