@@ -42,11 +42,11 @@ def formInput(request):
             # context = {'d':data}
             df_html = df.to_html()
 
-            return render(request, 'college_predictor/prediction.html', context={'df_html':df_html})
+            return render(request, 'college_predictor/base.html', context={'df_html':df_html, 'form':form})
         else:
             messages.warning(request, 'Please fill the form correctly')
         
     else:
         form = CandidateDataForm()
 
-    return render(request, 'college_predictor/home.html', {'form':form})
+    return render(request, 'college_predictor/base.html', {'form':form})
