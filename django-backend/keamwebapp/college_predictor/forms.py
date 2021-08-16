@@ -3,12 +3,12 @@ from django import forms
 class CandidateDataForm(forms.Form):
 
     category_choices_list = [
-        ('SM', 'State Merit'), ('EZ', 'Ezhava'),
-        ('MU', 'Muslim'), ('BH', 'Other Backward Hindu'),
-        ('LA', 'LA'), ('DV', 'Dheevara & Related'),
-        ('VK', 'Viswakarma & Related'), ('BX', 'Other Backward Christian'),
-        ('KU', 'Kudumbi'), ('KN', 'Kusavan & Related'),
-        ('SC', 'Scheduled Caste'), ('ST', 'Scheduled Tribe')
+        ('SM', 'State Merit (SM)'), ('EZ', 'Ezhava (EZ)'),
+        ('MU', 'Muslim (MU)'), ('BH', 'Other Backward Hindu (BH)'),
+        ('LA', 'LA'), ('DV', 'Dheevara & Related (DV)'),
+        ('VK', 'Viswakarma & Related (VK)'), ('BX', 'Other Backward Christian (BX)'),
+        ('KU', 'Kudumbi (KU)'), ('KN', 'Kusavan & Related (KN)'),
+        ('SC', 'Scheduled Caste (SC)'), ('ST', 'Scheduled Tribe (ST)')
     ]
 
     course_choice_list = [
