@@ -92,24 +92,6 @@ table div > .container > .r1 > .table{
 thead > tr:nth-child(1) {
   background-color: #AEB1B1;
 }
-
-/*
-tbody > tr:nth-child(1) {
-  background-color: #A9EA74;
-}
-tbody > tr:nth-child(2) {
-  background-color: #A9EA74;
-}
-tbody > tr:nth-child(3) {
-  background-color: #A9EA74;
-}
-tbody > tr:nth-child(4) {
-  background-color: #A9EA74;
-}
-tbody > tr:nth-child(5) {
-  background-color: #A9EA74;
-}*/
-
 tr > td:nth-child(5){
   display:none
 }
@@ -149,3 +131,21 @@ tr > th:nth-child(5){
 .legend .morelikely { 
   background-color: #a9ea74; 
 }
+ul.legend{
+  padding-left:0px;
+}
+@media screen and (max-width:460px){
+  ul.legend{
+    display:grid;
+    grid-template-columns:1fr;
+    height:8em;
+  }
+  ul.legend>li{
+    margin-left:4em;
+  }
+  ul.legend>li>span{
+    margin-right:4em;
+  }
+}
+
+  
