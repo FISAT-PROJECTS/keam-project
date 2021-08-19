@@ -99,15 +99,17 @@ tr > th:nth-child(5){
   display:none
 }
 
-.legend { 
+ul.legend { 
   list-style: none; 
   border: 1px solid black;
   height: 50px;
   width: 100%;
   background-color: #aeb1b1;
-  border-radius: 25px;
+  border-radius: 6px;
   display: flex;
   justify-content: space-evenly;
+  margin-top:2em;
+  padding-left:0px;
 }
 
 .legend li { 
@@ -130,9 +132,6 @@ tr > th:nth-child(5){
 }
 .legend .morelikely { 
   background-color: #a9ea74; 
-}
-ul.legend{
-  padding-left:0px;
 }
 @media screen and (max-width:460px){
   ul.legend{
