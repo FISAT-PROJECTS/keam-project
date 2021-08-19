@@ -3,6 +3,7 @@
   background: white;
   /*width:75vw;*/
   margin: 2em auto; 
+  line-height: 40px;
 }
 .r2{
   font-weight: bold;
@@ -114,4 +115,37 @@ tr > td:nth-child(5){
 }
 tr > th:nth-child(5){
   display:none
+}
+
+.legend { 
+  list-style: none; 
+  border: 1px solid black;
+  height: 50px;
+  width: 100%;
+  background-color: #aeb1b1;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.legend li { 
+  float: left; 
+  margin-right: 20px; 
+}
+
+.legend span { 
+  border: 0px solid #ccc; 
+  float: left; 
+  width: 20px;
+  height: 20px; 
+  margin: 10px; }
+
+.legend .lesslikely { 
+  background-color: #ffb654; 
+}
+.legend .likely { 
+  background-color: #fff4a1; 
+}
+.legend .morelikely { 
+  background-color: #a9ea74; 
 }
