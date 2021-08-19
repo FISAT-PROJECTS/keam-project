@@ -60,6 +60,40 @@
         </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            count = 0;
+            $("tbody > tr ").each(function(){
+                let href  = $(this).find("td:nth-child(5)").html();
+                if( href != "NaN"){
+                    let aTag =  $(document.createElement('a'));
+                    let innerhtml = $(this).find("td:nth-child(3)").html();
+
+                    aTag.attr('href',href);
+                    aTag.html(innerhtml);
+                    aTag.attr("target","blank");
+                    $(this).find("td:nth-child(3)").html(aTag);
+                }
+
+                let rank = parseInt($("#id_rank").val());  
+                let rank_in_tr = parseInt($(this).find("td:nth-child(4)").html());
+                if(rank_in_tr < rank || count < 1){
+                    $(this).css("background-color", "orange");
+                    $(this).css("border", "1px solid grey");
+                    count++;
+                }
+                else if(rank_in_tr < rank*2 || count<3){
+                    $(this).css("background-color", "#FFF4A1");
+                    $(this).css("border", "1px solid grey");
+                    count++;
+                }
+                else{
+                    $(this).css("background-color", "#A9EA74");
+                    $(this).css("border", "1px solid grey");
+                }
+            });
+        });
+    </script>
 </body>
 </html>

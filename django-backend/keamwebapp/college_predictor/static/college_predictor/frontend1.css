@@ -1,7 +1,7 @@
 .r1{
   font-weight: bold;
   background: white;
-  width:75vw;
+  /*width:75vw;*/
   margin: 2em auto; 
 }
 .r2{
@@ -61,7 +61,7 @@ table {
   margin-top: 2em;
 }
 
-th:nth-child(3) {
+th:nth-child(1),th:nth-child(2),th:nth-child(3), h6{
   text-align: center;
 }
 
@@ -70,7 +70,8 @@ th:nth-child(3) {
   font-size: 2em;
 }
 
-html, body { height: 100vh; 
+html, body { 
+  height: 100vh; 
   min-width: 1vw;
 }
 
@@ -82,15 +83,16 @@ body {
 .asteriskField {
   content-visibility: hidden;
 }
-
-table {
-  background-color: #FFF4A1;
+table div > .container > .r1 > .table{
+  /*background-color: #FFF4A1;*/
+  border: 1px solid grey;
 }
 
 thead > tr:nth-child(1) {
   background-color: #AEB1B1;
 }
 
+/*
 tbody > tr:nth-child(1) {
   background-color: #A9EA74;
 }
@@ -105,4 +107,11 @@ tbody > tr:nth-child(4) {
 }
 tbody > tr:nth-child(5) {
   background-color: #A9EA74;
+}*/
+
+tr > td:nth-child(5){
+  display:none
+}
+tr > th:nth-child(5){
+  display:none
 }
