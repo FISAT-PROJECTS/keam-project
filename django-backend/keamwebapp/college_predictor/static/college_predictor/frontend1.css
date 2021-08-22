@@ -51,7 +51,7 @@ footer {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .hlink {
@@ -72,13 +72,11 @@ th:nth-child(1),th:nth-child(2),th:nth-child(3), h6{
 }
 
 html, body { 
-  height: 100vh; 
-  min-width: 1vw;
+  height: 100vh;
 }
 
 body { 
-  display: flex; 
-  flex-direction: column; 
+  display: grid;
 }
 
 .asteriskField {
