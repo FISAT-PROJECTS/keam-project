@@ -35,7 +35,7 @@ def formInput(request):
             
             # converting all category names to "Closing Rank" in the output dataframe
             for a in categories:
-                df.rename(columns={a : "Closing Rank"}, inplace=True)
+                df.rename(columns={a : "Last Rank of Admission (2020)"}, inplace=True)
             
             df_html = df.to_html(classes=["table", "table-striped", "table-bordered","table-hover"])
 
