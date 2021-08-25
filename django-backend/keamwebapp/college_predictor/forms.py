@@ -23,6 +23,6 @@ class CandidateDataForm(forms.Form):
         ('Artificial Intelligence', 'Artificial Intelligence'), ('Electrical & Computer Engineering', 'Electrical & Computer Engineering')
     ]
 
-    category = forms.ChoiceField(choices=sorted(category_choices_list), required=True, initial=('SM', 'State Merit (SM)'))
-    course = forms.ChoiceField(choices=sorted(course_choice_list), required=True)
-    rank = forms.IntegerField(required=True)
+    category = forms.ChoiceField(choices=sorted(category_choices_list), required=True, initial=('SM', 'State Merit (SM)'), label='Select Category')
+    course = forms.ChoiceField(choices=sorted(course_choice_list), required=True, label='Select Course')
+    rank = forms.IntegerField(required=True, label='Enter Rank')
