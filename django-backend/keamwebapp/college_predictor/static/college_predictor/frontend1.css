@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100%;
+}
+
 .r1{
   font-weight: bold;
   background: white;
@@ -36,26 +40,26 @@ h2 {
   height: 20px;
   width: fit-content;
   margin: 1.5em auto;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 800;
 }
 
 h6 {
   height: auto;
   width: fit-content;
   margin: 1.5em auto;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.21em;
 }
 
 footer {
   background-color: black;
   color: white;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  /* flex-shrink: 0; */
+  bottom: 0px;
   width: 100%;
-}
-
-.hlink {
-  margin-left: 30px;
+  padding: 0px 10px;
 }
 
 table {
@@ -144,5 +148,3 @@ ul.legend {
     margin-right:4em;
   }
 }
-
-  
