@@ -28,7 +28,8 @@ SECRET_KEY = '67352dd106834a82bfbe783cbbca81f51464f784c1705833'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'not-a-college-predictor.herokuapp.com'
+    'not-a-college-predictor.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
