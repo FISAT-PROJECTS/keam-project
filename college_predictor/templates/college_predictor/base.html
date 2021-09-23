@@ -240,6 +240,23 @@
           opacity: 0;
         }
       }
+      
+      @keyframes spin{
+        from{
+          transform: rotate(0deg);
+        }
+        to{
+          transform: rotate(360deg);
+        }
+      }
+
+      .github-div:hover > a > svg{
+        animation: spin 3s linear infinite;
+        width: 1.5em;
+        height: 1.5em;
+        margin-bottom: 0.1em; 
+      }
+
       .github-div > a > svg {
         animation: hideshow 3s infinite;
         width: 1.5em;
