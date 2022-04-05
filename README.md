@@ -1,5 +1,5 @@
 # keam-project
-Predict the college you are going to get an admission in using your KEAM rank
+Predict your likely college based on your Kerala Entrance Rank based on historical metrics
 
 ## Project By:
 
